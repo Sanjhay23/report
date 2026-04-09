@@ -147,3 +147,8 @@
     background-clip: text;
   }
 }
+
+@keyframes scanLine {
+  0%, 100% { top: 2rem; }
+  50% { top: calc(100% - 2rem); }
+}

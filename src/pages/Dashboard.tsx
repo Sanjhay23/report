@@ -14,17 +14,15 @@ const recentAttendees = [
   { name: "Emily Davis", id: "EMP-1004", confidence: 97.8, status: "present" as const, time: "08:55 AM" },
 ];
 
-const Index = () => {
+const Dashboard = () => {
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        {/* Header */}
         <div>
           <h1 className="text-2xl font-bold text-foreground">Dashboard</h1>
           <p className="text-sm text-muted-foreground mt-0.5">AI-powered attendance monitoring in real-time</p>
         </div>
 
-        {/* Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <StatCard title="Total Students" value={45} subtitle="Enrolled" icon={Users} variant="info" />
           <StatCard title="Present" value={38} subtitle="84.4% rate" icon={UserCheck} variant="success" />
@@ -32,12 +30,9 @@ const Index = () => {
           <StatCard title="Late" value={3} subtitle="After 9:15 AM" icon={Clock} variant="warning" />
         </div>
 
-        {/* Main grid */}
         <div className="grid lg:grid-cols-3 gap-6">
-          {/* Camera + Recent */}
           <div className="lg:col-span-2 space-y-6">
             <CameraFeed />
-
             <div>
               <h3 className="text-sm font-semibold text-foreground mb-3">Recent Recognitions</h3>
               <div className="space-y-2">
@@ -47,15 +42,12 @@ const Index = () => {
               </div>
             </div>
           </div>
-
-          {/* Right column */}
           <div className="space-y-6">
             <ModelStatus />
             <NotificationsPanel />
           </div>
         </div>
 
-        {/* Charts */}
         <div className="grid md:grid-cols-2 gap-6">
           <AttendanceTrendChart />
           <MonthlyAttendanceChart />
@@ -65,4 +57,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Dashboard;
